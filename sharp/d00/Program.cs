@@ -1,16 +1,21 @@
 ﻿using System;
+using System.Globalization;
 
 namespace d00
 {
     class Program
     {
-        static double Result(double sum, double rate, int term, int selectedMonth, double payment)
+     /*   static double Result(double sum, double rate, int term, int selectedMonth, double payment)
         {
-            return (1);
-        }
+            double i = rate / 12 / 100;
+            double AnPlat= sum * i * Math.Pow((1 + i), term)/(Math.Pow((i + 1), term) -1);
+            double ObDolg = Math.Round((AnPlat * term), 2);
+            double NumOfMon = Math.Log((payment / (payment - i * AnPlat)), i +1);
+            return (NumOfMon);
+        }*/
         static void Main(string[] args)
         {
-            double Res = 0;
+          /*double Res = 0;
             if (args.Length == 3)
             {
                 double sum = double.Parse(args[0]);
@@ -33,7 +38,15 @@ namespace d00
                 double payment = double.Parse(args[4]);
                 Res = Result(sum, rate, term, selectedMonth, payment);
             }
-            Console.WriteLine("Результа экономии " + Res);
+            Console.WriteLine("Результа экономии " + Res);*/
+                     DateTime dt = new DateTime(2021,5,15);
+
+            for (int i = 0; i < 13; i++)
+        {
+            DateTime dtnew = dt.AddDays(i);
+            Console.WriteLine(dtnew);
+
+        }
         }
     }
 }
