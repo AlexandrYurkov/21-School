@@ -5,17 +5,35 @@ namespace d00
 {
     class Program
     {
-     /*   static double Result(double sum, double rate, int term, int selectedMonth, double payment)
+        static int Data(int term)
         {
-            double i = rate / 12 / 100;
-            double AnPlat= sum * i * Math.Pow((1 + i), term)/(Math.Pow((i + 1), term) -1);
-            double ObDolg = Math.Round((AnPlat * term), 2);
-            double NumOfMon = Math.Log((payment / (payment - i * AnPlat)), i +1);
-            return (NumOfMon);
-        }*/
+            int[] Days = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+            int day = 0;
+            int m = 5;
+            for (int i = 0; i < term; i++, ++m)
+            {
+                if (m > 11)
+                    m = 0;
+                day += Days[m];
+            }
+            return (day);
+        }
+        static double Result(double sum, double rate, int term, int selectedMonth, double payment)
+        {
+            double i = rate / 12 / 100; // ежемесечная процентная ставка
+            double AnPlat = Math.Round(sum * i * Math.Pow((1 + i), term) / (Math.Pow((i + 1), term) - 1), 2); // планируемый платеж в месяц
+            double ObDolg = Math.Round((AnPlat * term), 2); // Общий долг с учетом процентов
+            double NumOfMon = Math.Log(AnPlat / ((AnPlat) - (i * ObDolg)), i + 1);// Перерасчет месецем при погашении общей суммы долга
+            int Dt = 31;// количество дней в месяце
+            double percent = Math.Round((sum * rate/100 *Dt / 365), 2);//формула процентов для ежемесячного платежа
+            double t = AnPlat / percent;
+           
+           //Console.WriteLine(t);
+            return (percent);
+        }
         static void Main(string[] args)
         {
-          /*double Res = 0;
+            double Res = 0;
             if (args.Length == 3)
             {
                 double sum = double.Parse(args[0]);
@@ -27,7 +45,7 @@ namespace d00
             }
             else if (args.Length != 5)
             {
-                System.Console.WriteLine("Error: введите правильные данные!");
+                Console.WriteLine("Error: введите правильные данные!");
             }
             else
             {
@@ -38,15 +56,15 @@ namespace d00
                 double payment = double.Parse(args[4]);
                 Res = Result(sum, rate, term, selectedMonth, payment);
             }
-            Console.WriteLine("Результа экономии " + Res);*/
-                     DateTime dt = new DateTime(2021,5,15);
+            Console.WriteLine("Результа экономии " + Res);
+            //      DateTime dt = new DateTime(2021,5,15);
 
-            for (int i = 0; i < 13; i++)
-        {
-            DateTime dtnew = dt.AddDays(i);
-            Console.WriteLine(dtnew);
+            /*       for (int i = 0; i < 13; i++)
+               {
+                   DateTime dtnew = dt.AddDays(i);
+                   Console.WriteLine(dtnew);
 
-        }
+               }*/
         }
     }
 }
