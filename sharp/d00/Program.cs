@@ -56,7 +56,7 @@ namespace d00
                 double payment = double.Parse(args[4]);
                 Res = Result(sum, rate, term, selectedMonth, payment);
             }
-            Console.WriteLine("Результа экономии " + Res);
+           //.. Console.WriteLine("Результа экономии " + Res);
             //      DateTime dt = new DateTime(2021,5,15);
 
             /*       for (int i = 0; i < 13; i++)
