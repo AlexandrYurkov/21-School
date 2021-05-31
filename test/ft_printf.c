@@ -6,7 +6,7 @@ t_flags flags;
 
 flags.flag_minus = 0;
 flags.flag_zero = 0;
-flags.star = 0;
+//flags.star = 0;
 flags.dot = -1;
 flags.type = 0;
 flags.width = 0;

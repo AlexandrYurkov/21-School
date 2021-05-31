@@ -11,9 +11,9 @@ typedef struct s_flags
 {
     int flag_minus; //0
     int flag_zero; //0
-    int star; // 0
+    //int star; // 0
     int dot; // -1 
-    int width; //0
+    unsigned int width; //0
     char type; //0
     int space;
     char *mass;
@@ -29,5 +29,7 @@ char *ft_width(int width);
 int ft_stardot(char *str, va_list ap, t_flags *flags);
 int ft_spec(char c, char *str);
 int ft_type(va_list ap, t_flags *flags);
+int ft_string(va_list ap, t_flags *flags, int count);
+
 
 # endif

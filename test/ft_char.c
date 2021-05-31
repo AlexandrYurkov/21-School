@@ -8,9 +8,9 @@ int ft_char(va_list ap, t_flags *flags, int count)
     c = va_arg(ap, int);
     tmp = ft_width((flags->width) - 1);
     count += 1;
-    if (flags->star <= 1)
+    if (flags->width <= 1)
         write(1, &c, 1);
-    if (flags->flag_minus == 1 && flags->star > 1)
+    if (flags->flag_minus == 1 && flags->width > 1)
     {
         write(1, &c, 1);
         while (*tmp)
@@ -19,7 +19,7 @@ int ft_char(va_list ap, t_flags *flags, int count)
             count++;
         }
     }
-    if (flags->flag_minus == 0 && flags->star > 1)
+    if (flags->flag_minus == 0 && flags->width > 1)
     {
         while (*tmp)
         {

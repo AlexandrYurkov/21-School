@@ -7,9 +7,9 @@ int ft_type(va_list ap, t_flags *flags)
     count = 0;
     if(flags->type  == 'c')
         ft_char(ap, flags, count);
-    /*if(flags->type  == 's')
-        ft_string
-    if(flags->type  == 'd' || flags->type  == 'i')
+    if(flags->type  == 's')
+        ft_string(ap, flags, count);
+    /*if(flags->type  == 'd' || flags->type  == 'i')
         ft_int
     if(flags->type  == 'p')
         ft_pointr

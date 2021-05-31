@@ -7,7 +7,7 @@ t_flags ft_flag(char *str, va_list ap, t_flags *flags, int index)
     if (*str == '0')
         flags->flag_zero = 1;
     if (*str == '*' || (*str >= 0 && *str <= 9))
-        flags->star = ft_stardot(str, ap, flags);
+        flags->width = ft_stardot(str, ap, flags);
     if (*str == '.')
     {
         str++;
