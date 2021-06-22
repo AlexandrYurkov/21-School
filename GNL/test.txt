@@ -1,0 +1,10 @@
+1)	In computer programming, a static variable is a variable that has been allocated "statically", 
+2)	meaning that its lifetime (or "extent") is the entire run of the program. 
+3)	This is in contrast to shorter-lived automatic variables, 
+4)	whose storage is stack allocated and deallocated on the call stack;
+5)	and in contrast to objects, whose storage is dynamically allocated and deallocated in heap memory.
+6)	Variable lifetime is contrasted with scope (where a variable can be used): 
+7)	"global" and "local" refer to scope, not lifetime, but scope often implies lifetime. 
+8)	In many languages, global variables are always static, 
+9)	but in some languages they are dynamic, while local variables are generally automatic, 
+10)	but may be static.
