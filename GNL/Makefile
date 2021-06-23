@@ -1,35 +1,19 @@
-SOURCE	=	ft_char.c \
-			ft_flag.c \
-			ft_parse.c \
-			ft_printf.c \
-			ft_type.c \
-			ft_width.c \
-			ft_spec.c\
-			ft_str.c\
-			ft_stardot.c\
-			ft_int.c\
-			ft_zero.c\
-			ft_unsig.c\
-			ft_unsig_itoa.c\
-			ft_itoa_hex.c\
-			ft_hex.c\
-			ft_pointr.c\
-			ft_str_null.c\
+SOURCE	=	get_next_line.c\
 
-HEADER	=	ft_printf.h libft/libft.h
+HEADER	=	get_next_line.h libft/libft.h
 
 OBJECTS	=	${SOURCE:.c=.o}
 
 RM		=	rm -f
 
-NAME	=	libftprintf.a
+NAME	=	gnl.a
 
 AR		=	ar rcs
 
 CFLAGS	=	-Wall -Wextra -Werror
 
 %.o: %.c ${HEADER}
-			gcc  -Ilibft -c $< -o ${<:.c=.o}
+			gcc  ${CFLAGS} -I libft -c $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJECTS}
 			make -C libft
@@ -50,6 +34,6 @@ fclean:		clean
 re:			fclean all
 
 debug:		re
-			gcc -g  *.c ./libft/libft.a
+			gcc -g ${CFLAGS} *.c ./libft/libft.a
 
 .PHONY:		all clean fclean bonus
